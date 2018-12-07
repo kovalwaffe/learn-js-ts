@@ -37,14 +37,18 @@ console.log(tablica); // ['b','l','u','r']
 let fullName: string = 'Paweł';
 let age: number = 37;
 
-// GRAWIS ` 
+// GRAWIS `
 // TEPMLATE STRING
 let sentence: string = `Cześć nazywam sie ${fullName} \n
 za rok będę miał ${age + 1}`;
 console.log(sentence);
 
 // Enum to typ wyliczeniowy, indeks zaczyna sie od "0"
-enum Color { Red, Green, Blue };
+enum Color {
+  Red,
+  Green,
+  Blue
+}
 
 let numberColor: Color = Color.Red;
 let nameColor: string = Color[numberColor];
@@ -61,11 +65,11 @@ notSure = null;
 
 // VOID brak zwrotu
 function mojaFunkcja(): void {
-    console.log('hey');
-    //return 1;    ERROR
+  console.log('hey');
+  //return 1;    ERROR
 }
 
-// typy specjalne 
+// typy specjalne
 let u: undefined = undefined;
 let n: null = null;
 
@@ -76,14 +80,14 @@ console.log(unityp);
 
 // typ NEVER
 function error(message: string): never {
-    throw new Error(message);
+  throw new Error(message);
 }
 // error('Bardzo straszny blad');
 
 // TUPLE - krotka, to tablica ktorej dlugosc oraz typ jej elementróew jest znanny
 // kolejnosc elementów ma znaczenie
 let tuple: [string, number, boolean];
-tuple = ['Pablo',38,true];
+tuple = ['Pablo', 38, true];
 console.log(tuple);
 
 // ASERCJE

@@ -1,5 +1,5 @@
 class thisProblem {
-  msg: string = "hello world";
+  msg: string = 'hello world';
 
   printProblem1() {
     return function() {

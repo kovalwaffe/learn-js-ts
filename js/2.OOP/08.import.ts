@@ -1,4 +1,4 @@
-import { Dog } from "./05.klasy";
+import { Dog } from './05.klasy';
 import * as Klasy from './05.klasy';
 
 let pimpek = new Dog('Pimpek');

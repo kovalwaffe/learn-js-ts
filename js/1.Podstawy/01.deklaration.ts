@@ -34,7 +34,7 @@ const whoIAmValue: string = 'world';
 const obj = {
   name: 'Pablo',
   surname: 'Escobar'
-}
+};
 
 obj.name = 'Pawel';
 console.log(obj);
@@ -44,15 +44,15 @@ console.log(obj);
 // zmienna nie jest zdefiniowana ale istnieje tzn nie ma komunikatu ze jest nie zadeklarowana
 console.log(zadeklarowanaZmienna); //undefined
 var zadeklarowanaZmienna;
-zadeklarowanaZmienna = "Jestem zadeklarowana";
+zadeklarowanaZmienna = 'Jestem zadeklarowana';
 
 // HOISTING Funkcji dziala tak samo
 bar(); // Wywołanie funkcji foo()
 function bar() {
-  console.log("Wywołanie funkcji bar()");
+  console.log('Wywołanie funkcji bar()');
 }
 // Róznica jest gdy fukcja przypisane jest do zmiennej tzn wyrażenie fukkcyjne
-var barVar = function () {
+var barVar = function() {
   barVar(); // ReferenceError: barVar is not defined
-  console.log("Wywołanie funkcji bar()");
-}
+  console.log('Wywołanie funkcji bar()');
+};

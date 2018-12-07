@@ -1,8 +1,8 @@
 let suport = {
-    liczba1: losuj(),
-    liczba2: losuj()
-}
+  liczba1: losuj(),
+  liczba2: losuj()
+};
 
-function losuj(){
-    return Math.random() >= 0.5;
+function losuj() {
+  return Math.random() >= 0.5;
 }
