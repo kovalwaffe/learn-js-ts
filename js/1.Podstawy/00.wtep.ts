@@ -2,9 +2,9 @@
 // TS jest transpilowany do JS 
 
 // Zalety TS:
-// TS chorni przed rzeczami ktore nie powinny dziac np.
+// TS chorni przed rzeczami ktore nie powinny się dziac np.
 [] + [];  // '' 
-// TS zwroci blad
+// TS będzie zwracać bad
 {} + []; // JS : 0, TS Error
 [] + {}; // JS : "[object Object]", TS Error
 {} + {}; // JS : NaN or [object Object][object Object] depending upon browser, TS Error
