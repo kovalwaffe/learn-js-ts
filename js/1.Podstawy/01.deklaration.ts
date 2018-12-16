@@ -1,30 +1,37 @@
 // var
-// Zmienne zadeklarowane za pomocą var działają w kontekście funkcji lub skryptu
+//
+// Zmienne zadeklarowane za pomocą var działają w zakresie
+// funkcji lub skryptu.
+// Przez zasieg skryptowy rozumiemy zasieg globalny
 function foo() {
   var myVar = 10;
 }
 // console.log(myVar);
 // ReferenceError: myVar is not defined
 
-//zmienne domyslenie sa inicjowana jako 'undefined'
+// Zmienne domyslenie sa inicjowana jako 'undefined'.
 var zmienna: number; // undefined
 console.log(zmienna);
 
 // let
-// Deklaracja zmiennej za pomocą let sprawia, że zmienna działa w kontekście blokowym, np. wewnątrz pętli.
+//
+// Deklaracja zmiennej za pomocą let sprawia, że zmienna działa w
+// zakresie blokowym, np. wewnątrz pętli.
 for (let i = 0; i < 5; i++) {
   for (var j = 5; j <= 5; j++) {
     console.log(i);
   }
 }
-// Jest dostep do zmiennej
+// Jest dostep do zmiennej 'j' poniewaz var ma zakres funcji/skryptu
 console.log(j);
 
-// Nie ma dostępu do zmiennej
+// Nie ma dostępu do zmiennej 'i' zakdeklarowanej przez 'let'
 // ReferenceError: i is not defined
 // console.log(i);
 
-// CONST - deklaracja stalej (zmienne prostej)
+// CONST
+//
+// deklaracja stalej (zmienne prostej)
 const whoIAmValue: string = 'world';
 
 // TypeError: Assignment to constant variable.
