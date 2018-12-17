@@ -21,9 +21,10 @@ isDone = false;
 // Typowanie poprawia proces refaktoryzacji - lepiej jak compiler znajdzie blad
 // Typowanie to jedna z najlepszych form dokumentacji.
 // Sygnatura funkcji jest twierdzeniem, a dowodem jest ciało funkcyjne.
-// Jednoczenie typowanie jest opcjonalne
+// Jednoczenie typowanie w TS jest opcjonalne
 // TS umozliwia koszytanie z przyszlych junkcji JS jakie wejdą w przyszlosci
 
+// Number
 // Number jest liczba 64 bitowa z bitem znaku + 11 bitów połozenia przecinek rozdzielajacy
 // liczba 64 bitowa podwójnej precyzji
 // czesc całkowitą i ułamkową
