@@ -16,6 +16,23 @@ if (true) {
 console.log(foo); // 456
 // zmienna foo jest taka sama, nie jest towrzona nowa instancja
 
+// HOISTING - windowanie zmiennej na poczatek funkcji lub skryptu
+// zmienna nie jest zdefiniowana ale istnieje tzn nie ma komunikatu ze jest nie zadeklarowana
+console.log(zadeklarowanaZmienna); //undefined
+var zadeklarowanaZmienna;
+zadeklarowanaZmienna = 'Jestem zadeklarowana';
+
+// HOISTING Funkcji dziala tak samo
+bar(); // Wywołanie funkcji foo()
+function bar() {
+  console.log('Wywołanie funkcji bar()');
+}
+// Róznica jest gdy fukcja przypisane jest do zmiennej tzn wyrażenie fukkcyjne
+var barVar = function() {
+  barVar(); // ReferenceError: barVar is not defined
+  console.log('Wywołanie funkcji bar()');
+};
+
 // let
 //
 // Deklaracja zmiennej za pomocą let sprawia,
@@ -51,21 +68,3 @@ const obj = {
 
 obj.name = 'Pawel';
 console.log(obj);
-
-
-// HOISTING - windowanie zmiennej na poczatek funkcji lub skryptu
-// zmienna nie jest zdefiniowana ale istnieje tzn nie ma komunikatu ze jest nie zadeklarowana
-console.log(zadeklarowanaZmienna); //undefined
-var zadeklarowanaZmienna;
-zadeklarowanaZmienna = 'Jestem zadeklarowana';
-
-// HOISTING Funkcji dziala tak samo
-bar(); // Wywołanie funkcji foo()
-function bar() {
-  console.log('Wywołanie funkcji bar()');
-}
-// Róznica jest gdy fukcja przypisane jest do zmiennej tzn wyrażenie fukkcyjne
-var barVar = function() {
-  barVar(); // ReferenceError: barVar is not defined
-  console.log('Wywołanie funkcji bar()');
-};
