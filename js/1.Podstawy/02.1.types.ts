@@ -22,12 +22,11 @@ isDone = false;
 // Typowanie to jedna z najlepszych form dokumentacji.
 // Sygnatura funkcji jest twierdzeniem, a dowodem jest ciało funkcyjne.
 // Jednoczenie typowanie w TS jest opcjonalne
-// TS umozliwia koszytanie z przyszlych junkcji JS jakie wejdą w przyszlosci
+// TS umozliwia koszytanie z przyszlych funkcji JS jakie wejdą w przyszlosci
 
 // Number
 // Number jest liczba 64 bitowa z bitem znaku + 11 bitów połozenia przecinek rozdzielajacy
-// liczba 64 bitowa podwójnej precyzji
-// czesc całkowitą i ułamkową
+// liczba 64 bitowa podwójnej precyzji - część całkowita i ułamkowa.
 // Tak naprawde nie ma liczb całkowitych sa to liczby 64 bitowe podwójnej precyzji
 // number - dziesiętne, hex, binarne, octal, zmiennoprzecinkowe
 let decimal: number = 6;
@@ -45,12 +44,6 @@ console.log(tab); // ['b','l','u','r']
 
 let fullName: string = 'Paweł';
 let age: number = 37;
-
-// GRAWIS `
-// TEPMLATE STRING
-let sentence: string = `Cześć nazywam sie ${fullName} \n
-za rok będę miał ${age + 1}`;
-console.log(sentence);
 
 // Enum to typ wyliczeniowy, indeks zaczyna sie od "0"
 enum Color {

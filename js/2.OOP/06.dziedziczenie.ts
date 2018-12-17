@@ -11,6 +11,10 @@ class Animal {
   }
 }
 
+// Mozna dziedziczyć po jednej klasie.
+// Jeżeli wywołujemy konstruktor w naszej klasie ktora dziedziczy inna klase
+// to musimy wywołac konstruktor rodzica 'super()'.
+// Możemy przesłaniać metody
 class Cat extends Animal {
   constructor(name: string) {
     super(name);

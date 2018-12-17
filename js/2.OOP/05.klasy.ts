@@ -1,3 +1,4 @@
+// Konstruktor jest opcjonalny
 interface Animal2 {
   name: string;
   numberOfLegs: number;
@@ -5,7 +6,7 @@ interface Animal2 {
 
 export class Dog implements Animal2 {
   name: string;
-  numberOfLegs;
+  numberOfLegs: number;
   constructor(givenName: string) {
     console.log('konstruktor');
     this.name = givenName;
@@ -14,15 +15,15 @@ export class Dog implements Animal2 {
     return `Hello, my name is ${this.name}`;
   }
 }
-//Deklaracja klasy towrzy 2 rzeczy:
+// Deklaracja klasy towrzy 2 rzeczy:
 // - typ rezprezentujacy instancje obiektu
 // - dunkcje konstruktora
 //
-//Modyfikatory dostępu
-//public - domyslny
-//private - dostep tylko w klasie
-//Do pól zadeklarowanych jako protected możemy uzyskać
-//dostęp również z poziomu klas pochodnych, a do pól private nie.
+// Modyfikatory dostępu
+// public - domyslny
+// private - dostep tylko w klasie
+// Do pól zadeklarowanych jako protected możemy uzyskać
+// dostęp również z poziomu klas pochodnych, a do pól private nie.
 
 //readonly ???
 class Animal2 {
@@ -42,19 +43,6 @@ dog.sayHello(); // 'Hello, my name is Burek!';
 
 const dog = new Dog('Pimpek');
 console.log(dog.sayHello());
-
-//klasy abstrakcyjne nie tylko zawierają deklaracje pól i metod,
-//ale mogą też zawierać ich implementacje
-//Klas A nie mozńa instancjonować
-abstract class Animal {
-  constructor(protected name: string) {}
-
-  giveVoice() {
-    console.log(`Nazywam sie ${this.name}!`);
-  }
-
-  abstract eat(): void;
-}
 
 //const animal = new Animal(''); // blad!
 

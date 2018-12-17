@@ -1,3 +1,16 @@
+// GRAWIS `
+// TEPMLATE STRING
+// 3 zalety:
+// - interpolacja ciągów tekstowych
+// - tekst wielowierszowy
+// - osadzenie tagów w ciągach - przyklad 2
+
+// PRZYKŁAD 1
+let sentence: string = `Cześć nazywam sie ${fullName} \n
+za rok będę miał ${age + 1}`;
+console.log(sentence);
+
+// PRZYKŁAD 2
 var container = document.getElementById('container');
 
 var todo = {

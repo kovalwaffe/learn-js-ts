@@ -20,7 +20,7 @@ console.log(foo); // 456
 // zmienna nie jest zdefiniowana ale istnieje tzn nie ma komunikatu ze jest nie zadeklarowana
 console.log(zadeklarowanaZmienna); //undefined
 var zadeklarowanaZmienna;
-zadeklarowanaZmienna = 'Jestem zadeklarowana';
+zadeklarowanaZmienna = 'Jestem zadeklarowana i zaincjowana w tym miejscu';
 
 // HOISTING Funkcji dziala tak samo
 bar(); // Wywołanie funkcji foo()
