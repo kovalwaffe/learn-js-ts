@@ -1,4 +1,4 @@
-//wyrażenie
+//wyrażenie funkcyjne
 const myF = function(a, b) {
   return a + b;
 };

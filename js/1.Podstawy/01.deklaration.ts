@@ -1,20 +1,23 @@
 // var
 //
 // Zmienne zadeklarowane za pomocą var działają w zakresie
-// funkcji lub globalnie - poza funkcją.
-// Przez zasieg globalny rozumiemy jako zasieg w skrypcie
-function foo() {
+// *funkcji* lub *globalnie* - poza funkcją.
+// Przez zasieg globalny rozumiemy jako zasieg np. 
+// w przeglądarce jako składową obiektu *window*
+// np.  window.zminnnaGlobalna
+function myFoo() {
   var myVar = 10;
 }
 console.log(myVar);
-// ReferenceError: myVar is not defined
+// ReferencefError: myVar is not defined
 
-var foo = 123;
+var yourFoo = 123;
 if (true) {
-  var foo = 456;
+  var yourFoo = 456;
 }
-console.log(foo); // 456
-// zmienna foo jest taka sama, nie jest towrzona nowa instancja
+console.log(yourFoo); // 456
+// zmienna yourFoo nie zmienia wartości,
+// nie jest towrzona nowa zmianna w funkcji
 
 // HOISTING - windowanie zmiennej na poczatek funkcji lub skryptu
 // zmienna nie jest zdefiniowana ale istnieje tzn nie ma komunikatu ze jest nie zadeklarowana

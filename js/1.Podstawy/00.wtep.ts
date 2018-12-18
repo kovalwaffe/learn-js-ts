@@ -2,20 +2,20 @@
 // TS jest transpilowany do JS
 
 // Zalety TS:
-// TS chorni przed rzeczami ktore nie powinny się dziac np.
+// TS chroni przed rzeczami ktore nie powinny się dziać np.
 [] + []; // ''
-// TS będzie zwracać bad
-{}+[]; // JS : 0, TS Error
+// TS będzie zwracać błąd
+{} + []; // JS : 0, TS Error
 [] + {}; // JS : "[object Object]", TS Error
 {} + {}; // JS : NaN or [object Object][object Object] depending upon browser, TS Error
 'hello' - 1; // JS : NaN, TS Error
 
-// inicjalicacja
-// Zmienne domyslenie sa inicjowana jako 'undefined'.
+// Inicjalicacja zmiennej
+// Zmienne domyslenie sa inicjowana jako 'undefined' - nie posiadają wartości.
 var zmienna: number; // undefined
 console.log(zmienna);
 
-// dekladarcja
+// Dekladarcja zmiennej
 // deklaracja zminnych poprzez okreslenie wartości
 zmienna = 10;
 
@@ -27,7 +27,7 @@ console.log(0 === ''); // false
 console.log({ a: 123 } == { a: 123 }); // False
 console.log({ a: 123 } === { a: 123 }); // False
 // porównywanie 2 obiektów
-// zmienne wskazuja referencyjnie na obiekty w JS(Object Array RxExp
+// zmienne wskazuja referencyjnie na rózne obiekty w JS(Object Array RxExp)
 var foo = {};
 var bar = foo; // bar is a reference
 var baz = {}; // baz is a *new object* distinct from `foo`
@@ -49,7 +49,7 @@ if (0) {
 }
 
 // string
-if ('dowolny ciag') console.log('true');
+if ('dowolny ciag') console.log('dowolny ciąg jest true');
 
 if ('') {
 } else {
@@ -75,8 +75,9 @@ if ({}) {
 }
 
 // The !! pattren
-// pierwszy ! przekonwertuje na typ boolan jako false
-// Drugi ! odwroci wartosc boolean z false na true
-const name = '';
-const hasName = !!name;
+// Pierwszy znak ! przekonwertuje typ boolan oraz z negacją.
+// Aby opdrócic negacje dodajemy drugi znak ! ,który odwroci wartosc 
+// typu boolean na przeciwną i jednocześnie włąściwą.
+const myName = '';
+const hasName = !!myName;
 console.log(hasName);
