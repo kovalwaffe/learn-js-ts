@@ -34,7 +34,7 @@ var baz = {}; // baz is a *new object* distinct from `foo`
 console.log(foo === bar); // true
 console.log(foo === baz); // false
 
-// Trutty
+// Truthy
 // Variable Type When it is falsy When it is truthy
 // boolean'owe true i false chyba nie podlega dyskucji ;)
 

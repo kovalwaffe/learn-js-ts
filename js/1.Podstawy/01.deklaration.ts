@@ -30,7 +30,7 @@ bar(); // Wywołanie funkcji foo()
 function bar() {
   console.log('Wywołanie funkcji bar()');
 }
-// Róznica jest gdy fukcja przypisane jest do zmiennej tzn wyrażenie fukkcyjne
+// Róznica jest gdy fukcja przypisane jest do zmiennej tzn wyrażenie funkcyjne
 var barVar = function() {
   barVar(); // ReferenceError: barVar is not defined
   console.log('Wywołanie funkcji bar()');

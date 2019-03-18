@@ -95,7 +95,7 @@ JSON.stringify({willStay: null, willBeGone: undefined}); // {"willStay":null}
 
 // UNITYPY
 let unityp: number | null | undefined = 2;
-//unityp = 5;
+// unityp = 5;
 console.log(unityp);
 
 // typ NEVER
