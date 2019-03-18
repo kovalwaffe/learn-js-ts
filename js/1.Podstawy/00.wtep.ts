@@ -75,7 +75,7 @@ if ({}) {
 }
 
 // The !! pattren
-// Pierwszy znak ! przekonwertuje typ boolan oraz z negacją.
+// Pierwszy znak negacji ! przekonwertuje typ boolan z negacją.
 // Aby opdrócic negacje dodajemy drugi znak ! ,który odwroci wartosc 
 // typu boolean na przeciwną i jednocześnie włąściwą.
 const myName = '';
