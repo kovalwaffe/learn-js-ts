@@ -34,9 +34,9 @@ console.log({ a: 123 } === { a: 123 }); // False
 {
   // porównywanie 2 obiektów
   // zmienne wskazuja referencyjnie na rózne obiekty w JS(Object Array RxExp)
-  var foo = {};
-  var bar = foo; // bar is a reference
-  var baz = {}; // baz is a *new object* distinct from `foo`
+  let foo = {};
+  let bar = foo; // bar is a reference
+  let baz = {}; // baz is a *new object* distinct from `foo`
   console.log(foo === bar); // true
   console.log(foo === baz); // false
 }
