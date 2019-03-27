@@ -19,7 +19,7 @@
     var yourFoo = 456;
   }
   console.log(yourFoo); // 456
-  // zmienna yourFoo nie zmienia wartości,
+  // zmienna yourFoo zmienia wartość,
   // nie jest towrzona nowa zmianna w funkcji
 }
 {
@@ -36,8 +36,8 @@
     console.log('Wywołanie funkcji bar()');
   }
   // Róznica jest gdy fukcja przypisane jest do zmiennej tzn wyrażenie fukkcyjne
+  barVar(); // ReferenceError: barVar is not defined
   var barVar = function() {
-    barVar(); // ReferenceError: barVar is not defined
     console.log('Wywołanie funkcji bar()');
   };
 }
