@@ -5,13 +5,9 @@
 // TS chroni przed rzeczami ktore nie powinny się dziać np.
 [] + []; // ''
 // TS będzie zwracać błąd
-{
-}
-+[]; // JS : 0, TS Error
+{} + []; // JS : 0, TS Error
 [] + {}; // JS : "[object Object]", TS Error
-{
-}
-+{}; // JS : NaN or [object Object][object Object] depending upon browser, TS Error
+{} + {}; // JS : NaN or [object Object][object Object] depending upon browser, TS Error
 'hello' - 1; // JS : NaN, TS Error
 
 // Inicjalizacja zmiennej
