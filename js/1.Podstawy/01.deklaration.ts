@@ -2,33 +2,32 @@
 //
 // Zmienne zadeklarowane za pomocą var działają w zakresie
 // *funkcji* lub *globalnie* - poza funkcją.
-// Przez zasieg globalny rozumiemy jako zasieg np. 
+// Przez zasieg globalny rozumiemy jako zasieg np.
 // w przeglądarce jako składową obiektu *window*
 // np.  window.zminnnaGlobalna
-function myFoo() {
-  var myVar = 10;
+{
+  function myFoo() {
+    var myVar = 10;
+  }
+  console.log(myVar);
+  // ReferencefError: myVar is not defined
 }
-console.log(myVar);
-// ReferencefError: myVar is not defined
 
-var yourFoo = 123;
-if (true) {
-  var yourFoo = 456;
+{
+  var yourFoo = 123;
+  if (true) {
+    var yourFoo = 456;
+  }
+  console.log(yourFoo); // 456
+  // zmienna yourFoo nie zmienia wartości,
+  // nie jest towrzona nowa zmianna w funkcji
 }
-console.log(yourFoo); // 456
-// zmienna yourFoo nie zmienia wartości,
-// nie jest towrzona nowa zmianna w funkcji
-
-// HOISTING - windowanie zmiennej na poczatek funkcji lub skryptu
-// zmienna nie jest zdefiniowana ale istnieje tzn nie ma komunikatu ze jest nie zadeklarowana
-console.log(zadeklarowanaZmienna); //undefined
-var zadeklarowanaZmienna;
-zadeklarowanaZmienna = 'Jestem zadeklarowana i zaincjowana w tym miejscu';
-
-// HOISTING Funkcji dziala tak samo
-bar(); // Wywołanie funkcji foo()
-function bar() {
-  console.log('Wywołanie funkcji bar()');
+{
+  // HOISTING - windowanie zmiennej na poczatek funkcji lub skryptu
+  // zmienna nie jest zdefiniowana ale istnieje tzn nie ma komunikatu ze jest nie zadeklarowana
+  console.log(zadeklarowanaZmienna); //undefined
+  var zadeklarowanaZmienna;
+  zadeklarowanaZmienna = 'Jestem zadeklarowana i zaincjowana w tym miejscu';
 }
 // Róznica jest gdy fukcja przypisane jest do zmiennej tzn wyrażenie funkcyjne
 var barVar = function() {
@@ -53,7 +52,7 @@ console.log(j);
 
 // CONST
 //
-// Deklaracja stalej 
+// Deklaracja stalej
 // Zasięg 'const' jest taki sam jak 'let' - blokowy.
 // Deklaracja stałej za pomoca 'const' musi byc zainitializowana
 const whoIAmValue: string = 'world';
