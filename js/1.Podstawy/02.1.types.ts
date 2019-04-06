@@ -18,16 +18,17 @@ let isDone: boolean = true;
 isDone = false;
 
 // Deklarowanie typów poprawia jakość kodu i jego czytelność
-// Typowanie poprawia proces refaktoryzacji - lepiej jak compiler znajdzie blad
+// Typowanie poprawia proces refaktoryzacji - lepiej jak compiler znajdzie błąd
 // Typowanie to jedna z najlepszych form dokumentacji.
 // Sygnatura funkcji jest twierdzeniem, a dowodem jest ciało funkcyjne.
-// Jednoczenie typowanie w TS jest opcjonalne
-// TS umozliwia koszytanie z przyszlych funkcji JS jakie wejdą w przyszlosci
+// Jednoczenie typowanie w TS jest opcjonalne.
+// TS umożliwia korzystanie z przyszłych funkcji JS jakie wejdą w przyszłości
 
 // Number
-// Number jest liczba 64 bitowa z bitem znaku + 11 bitów połozenia przecinek rozdzielajacy
-// liczba 64 bitowa podwójnej precyzji - część całkowita i ułamkowa.
-// Tak naprawde nie ma liczb całkowitych sa to liczby 64 bitowe podwójnej precyzji
+// Number jest liczba 64 bitowa z bitem znaku 
+// w tym 11 bitów połozenia dla przecinka rozdzielajacego część całkowitą i ułamkową.
+// Liczba 64 bitowa podwójnej precyzji - część całkowita i ułamkowa.
+// Tak naprawdę nie ma liczb całkowitych sa to liczby 64 bitowe podwójnej precyzji
 // number - dziesiętne, hex, binarne, octal, zmiennoprzecinkowe
 let decimal: number = 6;
 let hex: number = 0xf00d;
@@ -45,7 +46,8 @@ console.log(tab); // ['b','l','u','r']
 let fullName: string = 'Paweł';
 let age: number = 37;
 
-// Enum to typ wyliczeniowy, indeks zaczyna sie od "0"
+// Enum to typ wyliczeniowy, indeks zaczyna sie od "0".
+// Enum to sposób nadawania bardziej przyjaznych nazw zestawom wartości liczbowych
 enum Color {
   Red,
   Green,
@@ -105,7 +107,7 @@ function error(message: string): never {
 // error('Bardzo straszny blad');
 
 // TUPLE - krotka, to tablica ktorej dlugosc oraz typ jej elementróew jest znanny
-// kolejnosc elementów ma znaczenie
+// oraz kolejność elementów ma znaczenie
 let tuple: [string, number, boolean];
 tuple = ['Pablo', 38, true];
 console.log(tuple);
