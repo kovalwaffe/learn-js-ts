@@ -34,3 +34,14 @@
   console.log(amount); // 215.9784
   console.log(amount.toFixed(2)); // "215.98"
 }
+
+// ASERCJE
+// zmienne tkore pochodza z innych blibliotej JS nie posiadaja typy zmienne
+// mechanizm type assertion
+notSure = 'Jakas taka niepewna';
+let srtLength: number = (<string>notSure).length;
+console.log(srtLength);
+// AS
+// Asercja w TS
+let srtLength2: number = (notSure as string).length;
+console.log(srtLength2);

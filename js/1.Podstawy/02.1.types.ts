@@ -25,7 +25,7 @@ isDone = false;
 // TS umożliwia korzystanie z przyszłych funkcji JS jakie wejdą w przyszłości
 
 // Number
-// Number jest liczba 64 bitowa z bitem znaku 
+// Number jest liczba 64 bitowa z bitem znaku
 // w tym 11 bitów połozenia dla przecinka rozdzielajacego część całkowitą i ułamkową.
 // Liczba 64 bitowa podwójnej precyzji - część całkowita i ułamkowa.
 // Tak naprawdę nie ma liczb całkowitych sa to liczby 64 bitowe podwójnej precyzji
@@ -89,7 +89,7 @@ function foo(arg: string | null | undefined) {
   }
 }
 // W obiektach JSON uzywane sa null
-JSON.stringify({willStay: null, willBeGone: undefined}); // {"willStay":null}
+JSON.stringify({ willStay: null, willBeGone: undefined }); // {"willStay":null}
 
 // TypeScript team doesn't use null : TypeScript coding guidelines and it hasn't caused any
 // problems. Douglas Crockford thinks null is a bad idea and we should all just use
@@ -99,6 +99,19 @@ JSON.stringify({willStay: null, willBeGone: undefined}); // {"willStay":null}
 let unityp: number | null | undefined = 2;
 // unityp = 5;
 console.log(unityp);
+
+// Object
+// reprezentuje type kotre nie sa typami prostymi
+// tzn nie sa number, string, boolead, symbol , null i undefined
+// With object type, APIs like Object.create can be better represented. For example:
+
+declare function create(o: object | null): void;
+
+create({ prop: 0 }); // OK
+create(null); // OK
+
+create(42); // Error
+create('string'); // Error
 
 // typ NEVER
 function error(message: string): never {
@@ -111,17 +124,6 @@ function error(message: string): never {
 let tuple: [string, number, boolean];
 tuple = ['Pablo', 38, true];
 console.log(tuple);
-
-// ASERCJE
-// zmienne tkore pochodza z innych blibliotej JS nie posiadaja typy zmienne
-// mechanizm type assertion
-notSure = 'Jakas taka niepewna';
-let srtLength: number = (<string>notSure).length;
-console.log(srtLength);
-// AS
-// Asercja w TS
-let srtLength2: number = (notSure as string).length;
-console.log(srtLength2);
 
 // NaN
 // NIektorych wyliczen nie da sie przedtawic jako Number
