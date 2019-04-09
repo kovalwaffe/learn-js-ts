@@ -36,8 +36,8 @@
   function bar() {
     console.log('Wywołanie funkcji bar()');
   }
-  // Róznica widoczna jest gdy funkcja przypisa jest do zmiennej 
-  // zadeklarowane jest tzn wyrażenie funkcyjne
+  // Róznica widoczna jest gdy funkcja przypisana jest do zmiennej 
+  // zadeklarowana jest tzn wyrażenie funkcyjne
   barVar(); // ReferenceError: barVar is not defined
   var barVar = function() {
     console.log('Wywołanie funkcji barVar()');
