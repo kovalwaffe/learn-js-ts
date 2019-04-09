@@ -80,6 +80,9 @@ function mojaFunkcja(): void {
   //return 1;    ERROR
 }
 
+// pusty typ - nie uzyteczne bo mozna przypisac null lub indefined
+let unusable: void = undefined;
+
 // typy specjalne
 // Something hasn't been initialized : undefined .
 // Something is currently unavailable: null .
@@ -87,38 +90,6 @@ let u: undefined = undefined;
 let n: null = null;
 // In strict mode if you use foo and foo is undefined you
 // get a ReferenceError exception and the whole call stack unwinds.
-
-// Recommend == null to check for both undefined or null . You generally don't want to
-// make a distinction between the two.
-function foo(arg: string | null | undefined) {
-  if (arg != null) {
-    // arg must be a string as `!=` rules out both null and undefined.
-  }
-}
-// W obiektach JSON uzywane sa null
-JSON.stringify({ willStay: null, willBeGone: undefined }); // {"willStay":null}
-
-// TypeScript team doesn't use null : TypeScript coding guidelines and it hasn't caused any
-// problems. Douglas Crockford thinks null is a bad idea and we should all just use
-// undefined .
-
-// UNITYPY
-let unityp: number | null | undefined = 2;
-// unityp = 5;
-console.log(unityp);
-
-// Object
-// reprezentuje type kotre nie sa typami prostymi
-// tzn nie sa number, string, boolead, symbol , null i undefined
-// With object type, APIs like Object.create can be better represented. For example:
-
-declare function create(o: object | null): void;
-
-create({ prop: 0 }); // OK
-create(null); // OK
-
-create(42); // Error
-create('string'); // Error
 
 // typ NEVER
 function error(message: string): never {
@@ -134,3 +105,35 @@ console.log(Math.sqrt(-1)); // NaN
 console.log(NaN === NaN); // false!!
 // Do this
 console.log(Number.isNaN(NaN)); // true
+
+// Object
+// reprezentuje type kotre nie sa typami prostymi
+// tzn nie sa number, string, boolead, symbol , null i undefined
+// With object type, APIs like Object.create can be better represented. For example:
+
+declare function create(o: object | null): void;
+
+create({ prop: 0 }); // OK
+create(null); // OK
+
+create(42); // Error
+create('string'); // Error
+
+// UNITYPY
+let unityp: number | null | undefined = 2;
+// unityp = 5;
+console.log(unityp);
+
+// Recommend == null to check for both undefined or null . You generally don't want to
+// make a distinction between the two.
+function foo(arg: string | null | undefined) {
+  if (arg != null) {
+    // arg must be a string as `!=` rules out both null and undefined.
+  }
+}
+// W obiektach JSON uzywane sa null
+JSON.stringify({ willStay: null, willBeGone: undefined }); // {"willStay":null}
+
+// TypeScript team doesn't use null : TypeScript coding guidelines and it hasn't caused any
+// problems. Douglas Crockford thinks null is a bad idea and we should all just use
+// undefined .
