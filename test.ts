@@ -1,3 +1,3 @@
-let dana: [number, string];
-dana =  [2,'cos'];
-console.log(dana);
+let notSure: any = 'Jakas taka niepewnaggggggggg';
+let srtLength: number = (<string>notSure).length;
+console.log(srtLength);
