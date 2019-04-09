@@ -46,6 +46,13 @@ console.log(tab); // ['b','l','u','r']
 let fullName: string = 'Paweł';
 let age: number = 37;
 
+// TUPLE - krotka, to tablica ktorej dlugosc oraz typ jej elementróew jest znanny
+// oraz kolejność elementów ma znaczenie
+{
+  let tuple: [string, number, boolean];
+  tuple = ['Pablo', 38, true];
+  console.log(tuple);
+}
 // Enum to typ wyliczeniowy, indeks zaczyna sie od "0".
 // Enum to sposób nadawania bardziej przyjaznych nazw zestawom wartości liczbowych
 enum Color {
@@ -118,12 +125,6 @@ function error(message: string): never {
   throw new Error(message);
 }
 // error('Bardzo straszny blad');
-
-// TUPLE - krotka, to tablica ktorej dlugosc oraz typ jej elementróew jest znanny
-// oraz kolejność elementów ma znaczenie
-let tuple: [string, number, boolean];
-tuple = ['Pablo', 38, true];
-console.log(tuple);
 
 // NaN
 // NIektorych wyliczen nie da sie przedtawic jako Number
