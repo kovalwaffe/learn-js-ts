@@ -92,13 +92,14 @@ let n: null = null;
 // get a ReferenceError exception and the whole call stack unwinds.
 
 // typ NEVER
+// Nigdy nie zostanie zwrócona wartość
 function error(message: string): never {
   throw new Error(message);
 }
 // error('Bardzo straszny blad');
 
 // NaN
-// NIektorych wyliczen nie da sie przedtawic jako Number
+// Niektórych wyliczeń nie da sie przedtawić jako 'number'
 console.log(Math.sqrt(-1)); // NaN
 // Note: Equality checks don't work on NaN values. Use Number.isNaN instead:
 // Don't do this
@@ -107,8 +108,8 @@ console.log(NaN === NaN); // false!!
 console.log(Number.isNaN(NaN)); // true
 
 // Object
-// reprezentuje type kotre nie sa typami prostymi
-// tzn nie sa number, string, boolead, symbol , null i undefined
+// reprezentuje type które nie są typami prostymi
+// tzn nie są number, string, boolead, symbol , null i undefined
 // With object type, APIs like Object.create can be better represented. For example:
 
 declare function create(o: object | null): void;
