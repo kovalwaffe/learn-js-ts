@@ -108,8 +108,8 @@ console.log(NaN === NaN); // false!!
 console.log(Number.isNaN(NaN)); // true
 
 // Object
-// reprezentuje type które nie są typami prostymi
-// tzn nie są number, string, boolead, symbol , null i undefined
+// typ 'object' reprezentuje typ który nie jest typami prostymi
+// tzn nie jest number, string, boolead, symbol, null i undefined
 // With object type, APIs like Object.create can be better represented. For example:
 
 declare function create(o: object | null): void;
