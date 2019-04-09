@@ -18,16 +18,17 @@ let isDone: boolean = true;
 isDone = false;
 
 // Deklarowanie typów poprawia jakość kodu i jego czytelność
-// Typowanie poprawia proces refaktoryzacji - lepiej jak compiler znajdzie blad
+// Typowanie poprawia proces refaktoryzacji - lepiej jak compiler znajdzie błąd
 // Typowanie to jedna z najlepszych form dokumentacji.
 // Sygnatura funkcji jest twierdzeniem, a dowodem jest ciało funkcyjne.
-// Jednoczenie typowanie w TS jest opcjonalne
-// TS umozliwia koszytanie z przyszlych funkcji JS jakie wejdą w przyszlosci
+// Jednoczenie typowanie w TS jest opcjonalne.
+// TS umożliwia korzystanie z przyszłych funkcji JS jakie wejdą w przyszłości
 
 // Number
-// Number jest liczba 64 bitowa z bitem znaku + 11 bitów połozenia przecinek rozdzielajacy
-// liczba 64 bitowa podwójnej precyzji - część całkowita i ułamkowa.
-// Tak naprawde nie ma liczb całkowitych sa to liczby 64 bitowe podwójnej precyzji
+// Number jest liczba 64 bitowa z bitem znaku
+// w tym 11 bitów połozenia dla przecinka rozdzielajacego część całkowitą i ułamkową.
+// Liczba 64 bitowa podwójnej precyzji - część całkowita i ułamkowa.
+// Tak naprawdę nie ma liczb całkowitych sa to liczby 64 bitowe podwójnej precyzji
 // number - dziesiętne, hex, binarne, octal, zmiennoprzecinkowe
 let decimal: number = 6;
 let hex: number = 0xf00d;
@@ -45,7 +46,8 @@ console.log(tab); // ['b','l','u','r']
 let fullName: string = 'Paweł';
 let age: number = 37;
 
-// Enum to typ wyliczeniowy, indeks zaczyna sie od "0"
+// Enum to typ wyliczeniowy, indeks zaczyna sie od "0".
+// Enum to sposób nadawania bardziej przyjaznych nazw zestawom wartości liczbowych
 enum Color {
   Red,
   Green,
@@ -87,7 +89,7 @@ function foo(arg: string | null | undefined) {
   }
 }
 // W obiektach JSON uzywane sa null
-JSON.stringify({willStay: null, willBeGone: undefined}); // {"willStay":null}
+JSON.stringify({ willStay: null, willBeGone: undefined }); // {"willStay":null}
 
 // TypeScript team doesn't use null : TypeScript coding guidelines and it hasn't caused any
 // problems. Douglas Crockford thinks null is a bad idea and we should all just use
@@ -98,6 +100,19 @@ let unityp: number | null | undefined = 2;
 // unityp = 5;
 console.log(unityp);
 
+// Object
+// reprezentuje type kotre nie sa typami prostymi
+// tzn nie sa number, string, boolead, symbol , null i undefined
+// With object type, APIs like Object.create can be better represented. For example:
+
+declare function create(o: object | null): void;
+
+create({ prop: 0 }); // OK
+create(null); // OK
+
+create(42); // Error
+create('string'); // Error
+
 // typ NEVER
 function error(message: string): never {
   throw new Error(message);
@@ -105,21 +120,10 @@ function error(message: string): never {
 // error('Bardzo straszny blad');
 
 // TUPLE - krotka, to tablica ktorej dlugosc oraz typ jej elementróew jest znanny
-// kolejnosc elementów ma znaczenie
+// oraz kolejność elementów ma znaczenie
 let tuple: [string, number, boolean];
 tuple = ['Pablo', 38, true];
 console.log(tuple);
-
-// ASERCJE
-// zmienne tkore pochodza z innych blibliotej JS nie posiadaja typy zmienne
-// mechanizm type assertion
-notSure = 'Jakas taka niepewna';
-let srtLength: number = (<string>notSure).length;
-console.log(srtLength);
-// AS
-// Asercja w TS
-let srtLength2: number = (notSure as string).length;
-console.log(srtLength2);
 
 // NaN
 // NIektorych wyliczen nie da sie przedtawic jako Number

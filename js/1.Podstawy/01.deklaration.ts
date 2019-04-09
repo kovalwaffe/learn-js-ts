@@ -19,8 +19,8 @@
     var yourFoo = 456;
   }
   console.log(yourFoo); // 456
-  // zmienna yourFoo nie zmienia wartości,
-  // nie jest towrzona nowa zmianna w funkcji
+  // zmienna yourFoo zmienia wartość,
+  // nie jest tworzona nowa zmianna w funkcji
 }
 {
   // HOISTING - windowanie zmiennej na poczatek funkcji lub skryptu
@@ -29,11 +29,20 @@
   var zadeklarowanaZmienna;
   zadeklarowanaZmienna = 'Jestem zadeklarowana i zaincjowana w tym miejscu';
 }
-// Róznica jest gdy fukcja przypisane jest do zmiennej tzn wyrażenie funkcyjne
-var barVar = function() {
+
+{
+  // HOISTING Funkcji działa tak samo
+  bar(); // Wywołanie funkcji foo()
+  function bar() {
+    console.log('Wywołanie funkcji bar()');
+  }
+  // Róznica widoczna jest gdy funkcja przypisa jest do zmiennej 
+  // zadeklarowane jest tzn wyrażenie funkcyjne
   barVar(); // ReferenceError: barVar is not defined
-  console.log('Wywołanie funkcji bar()');
-};
+  var barVar = function() {
+    console.log('Wywołanie funkcji barVar()');
+  };
+}
 
 // let
 //
@@ -44,9 +53,9 @@ for (let i = 0; i < 5; i++) {
     console.log(i);
   }
 }
-// Jest dostep do zmiennej 'j' poniewaz var ma zakres funcji/skryptu
+// Mamy dostęp do zmiennej 'j' poniewaz var ma zakres funkcji/skryptu
 console.log(j);
-// Nie ma dostępu do zmiennej 'i' zakdeklarowanej przez 'let'
+// Nie mamy dostępu do zmiennej 'i' zakdeklarowanej przez 'let'
 // ReferenceError: i is not defined
 // console.log(i);
 
