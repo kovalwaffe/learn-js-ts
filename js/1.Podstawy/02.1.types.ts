@@ -46,8 +46,8 @@ console.log(tab); // ['b','l','u','r']
 let fullName: string = 'Paweł';
 let age: number = 37;
 
-// TUPLE - krotka, to tablica ktorej dlugosc oraz typ jej elementróew jest znanny
-// oraz kolejność elementów ma znaczenie
+// TUPLE - krotka, to tablica ktorej dlugosc oraz typ jej elementrów jest znany
+// oraz kolejność tych elementów ma znaczenie
 {
   let tuple: [string, number, boolean];
   tuple = ['Pablo', 38, true];
@@ -80,7 +80,7 @@ function mojaFunkcja(): void {
   //return 1;    ERROR
 }
 
-// pusty typ - nie uzyteczne bo mozna przypisac null lub indefined
+// pusty typ - nie jest uzyteczny, bo mozna przypisac null lub undefined
 let unusable: void = undefined;
 
 // typy specjalne
