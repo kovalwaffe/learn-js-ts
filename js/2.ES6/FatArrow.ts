@@ -1,3 +1,28 @@
+{
+  // fn declaration - deklaracja funcji
+  function add(x, y) {
+    return x + y;
+  }
+
+  // fn expression - wyrażenie funkcyjne
+  var add = function(x, y) {
+    return x + y;
+  };
+
+  // Mozemy zapisać fukcje jako strzałkową
+  var add = (x, y) => {
+    return x + y;
+  };
+
+  // Mozemy uzyc f. strzałkowej jako anonimową
+  users.map(function () {
+
+  })
+  
+  users.map(() => {
+  
+  })
+}
 // Funkcje strzałkowe, fat arrows, lambda function
 //
 // Nie musisz pisać 'function'
