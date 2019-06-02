@@ -133,6 +133,7 @@ function foo(arg: string | null | undefined) {
   }
 }
 // W obiektach JSON uzywane sa null
+// method converts a JavaScript object or value to a JSON string 
 JSON.stringify({ willStay: null, willBeGone: undefined }); // {"willStay":null}
 
 // TypeScript team doesn't use null : TypeScript coding guidelines and it hasn't caused any
