@@ -9,7 +9,7 @@
   function myFoo() {
     var myVar = 10;
   }
-  console.log(myVar);
+  // console.log(myVar);
   // ReferencefError: myVar is not defined
 }
 
@@ -36,9 +36,9 @@
   function bar() {
     console.log('Wywołanie funkcji bar()');
   }
-  // Róznica widoczna jest gdy funkcja przypisana jest do zmiennej 
+  // Róznica widoczna jest gdy funkcja przypisana jest do zmiennej
   // zadeklarowana jest tzn wyrażenie funkcyjne
-  barVar(); // ReferenceError: barVar is not defined
+  // barVar(); // ReferenceError: barVar is not defined
   var barVar = function() {
     console.log('Wywołanie funkcji barVar()');
   };
@@ -48,13 +48,15 @@
 //
 // Deklaracja zmiennej za pomocą let sprawia,
 // że zmienna działa w zakresie blokowym, np. wewnątrz pętli.
-for (let i = 0; i < 5; i++) {
-  for (var j = 5; j <= 5; j++) {
-    console.log(i);
+{
+  for (let i = 0; i < 5; i++) {
+    for (var j = 5; j <= 5; j++) {
+      console.log(i);
+    }
   }
+  // Mamy dostęp do zmiennej 'j' poniewaz var ma zakres funkcji/skryptu
+  console.log(j);
 }
-// Mamy dostęp do zmiennej 'j' poniewaz var ma zakres funkcji/skryptu
-console.log(j);
 // Nie mamy dostępu do zmiennej 'i' zakdeklarowanej przez 'let'
 // ReferenceError: i is not defined
 // console.log(i);
@@ -64,18 +66,20 @@ console.log(j);
 // Deklaracja stalej
 // Zasięg 'const' jest taki sam jak 'let' - blokowy.
 // Deklaracja stałej za pomoca 'const' musi byc zainitializowana
-const whoIAmValue: string = 'world';
-// Nie mozna zmieniać wartość stałej
-// whoIAmValue = 'Pablo'; // error const
-// TypeError: Assignment to constant variable.
+{
+  const whoIAmValue: string = 'world';
+  // Nie mozna zmieniać wartość stałej
+  // whoIAmValue = 'Pablo'; // error const
+  // TypeError: Assignment to constant variable.
 
-// Nie mozna zmianiać referencji do obiektu
-// Można zmieniać wlasciwosci obiektów
-// Rekomenduje się użycie 'const' przy towrzeniu stałych typu prostego
-const obj = {
-  name: 'Pablo',
-  surname: 'Escobar'
-};
+  // Nie mozna zmianiać referencji do obiektu
+  // Można zmieniać wlasciwosci obiektów
+  // Rekomenduje się użycie 'const' przy towrzeniu stałych typu prostego
+  const obj = {
+    name: 'Pablo',
+    surname: 'Escobar'
+  };
 
-obj.name = 'Pawel';
-console.log(obj);
+  obj.name = 'Pawel';
+  console.log(obj);
+}
