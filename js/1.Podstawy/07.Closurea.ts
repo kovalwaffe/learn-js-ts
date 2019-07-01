@@ -17,3 +17,23 @@ function outerFunction(arg) {
 var innerFunction = outerFunction('hello closure!');
 // Note the outerFunction has returned
 innerFunction(); // logs hello closure!
+
+
+let posts = [];
+
+function readPost(cb) {
+  setTimeout(() => {
+    posts.push('Wpis 1', 'Wpis 2');
+    cb();
+  }, 2000);
+}
+
+function showPost() {
+  console.log(posts);
+}
+
+readPost(function() {
+  showPost(); //["Wpis 1", "Wpis 2"]
+});
+//lub
+readPost(showPost);
