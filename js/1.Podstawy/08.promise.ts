@@ -96,7 +96,7 @@
 // Await
 {
   // anync musi byc jezeli korzystamy z await
-  async function foo () {
+  async function foo() {
     // await sprawia ze co zmiennej przypisywana jest wartość z promisa a nie sam promise(okiekt)
     const promise = await new Promise((resolve, reject) => {
       setTimeout(() => resolve('finished!'), 1000);
@@ -105,3 +105,16 @@
   }
   foo();
 }
+
+// NOWY zaspis promisów za pomoca ASYNC/AWAIT - ładnie wyglada niz stary sposób z then
+// oznaczamy funkcje na ktore trzaba poczekac, bo te funcje sa asynchroniczne
+// zamykamy zbiór promisoów w klamry z jest obsłygą błedów TRY/CATCH
+const getBerr = async id => {
+  try {
+    const response = await fetch(`${baseURL}${id}`); //to tez promise
+    const data = await response.json(); //to tez
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
