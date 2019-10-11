@@ -1,5 +1,91 @@
 // REASTING AND SPREADING
+// identycznie jak spread syntax wygląda rest parameter,
+// różnicą jest miejsce użycia - w tym przypadku jako parametr funkcji.
 
+// kopiowanie tablicy
+{
+  const fruits = ['apple', 'orange', 'banana'];
+  const fruitsCopied = [...fruits]; // ['apple', 'orange', 'banana']
+}
+
+// Sortowanie lub dublikowanie elementów
+{
+  const fruits = ['apple', 'orange', 'banana', 'banana'];
+  const uniqueFruits = [...new Set(fruits)]; // ['apple', 'orange', 'banana']
+}
+
+// łączenie tablic
+{
+  const fruits = ['apple', 'orange', 'banana'];
+  const vegetables = ['carrot'];
+  const fruitsAndVegetables = [...fruits, ...vegetables]; // ['apple', 'orange', 'banana', 'carrot']
+  const fruitsAndVegetables = ['carrot', ...fruits]; // ['carrot', 'apple', 'orange', 'banana']
+}
+
+// Tablica jako arbumenty
+{
+  const mixer = (x, y, z) => console.log(x, y, z);
+  const fruits = ['apple', 'orange', 'banana'];
+
+  mixer(...fruits); // 'apple', 'orange', 'banana'
+}
+//Ciecie tablic
+{
+  const fruits = ['apple', 'orange', 'banana'];
+  const [apple, ...remainingFruits] = fruits; // ['orange', 'banana']
+
+  // old way
+  const remainingFruits = fruits.slice(1);
+}
+
+// Konwersja 'arguments' do tablicy
+{
+  const mixer = () => console.log([...arguments]);
+  mixer('apple'); // ['apple']
+
+  // old way
+  Array.prototype.map.call(arguments, arg => arg);
+
+  // prostszy sposob za pomoca spread
+  const mixer = (...arguments) => console.log(arguments);
+  mixer('apple'); // ['apple']
+}
+
+// Arguments are like a NodeList returned from a querySelectorAll function.
+// They also behave a bit like an array but don't have the appropriate methods.
+{
+  [...document.querySelectorAll('div')];
+
+  // old way
+  Array.prototype.slice.call(document.querySelectorAll('div'));
+}
+// Kopiowanie obiektu
+{
+  const todo = { name: 'Clean the dishes' };
+  const todoCopied = { ...todo }; // { name: 'Clean the dishes' }
+  console.log(todo === todoCopied); // false
+
+  // old way
+  Object.assign({}, todo);
+}
+// Mergowanie obiektu
+{
+  const todo = { name: 'Clean the dishes' };
+  const state = { completed: false };
+  const nextTodo = { name: 'Ironing' };
+  const merged = { ...todo, ...state, ...nextTodo }; // { name: 'Ironing', completed: false }
+
+  // old way
+  Object.assign({}, todo, state, nextTodo);
+}
+// Ciecie stringa do tablicy znaków
+{
+  const country = 'USA';
+  console.log([...country]); // ['U', 'S', 'A']
+
+  // old way
+  country.split('');
+}
 // 1. Dodanie właściwości przy klonowaniu obiektu
 {
   const user = { id: 100, name: 'Howard Moon' };
